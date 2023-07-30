@@ -51,7 +51,7 @@ npm run serve
 ## Estrutura do Projeto
 
 ```arduino
-meu-projeto/
+testedti/
 ├── backend/
 │   ├── Controllers/
 │   ├── Models/
