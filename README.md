@@ -48,7 +48,7 @@ npm run serve
 
 7. O sistema estará disponível em http://localhost:8080/ e a API em http://localhost:5000/.
 
-##Estrutura do Projeto
+## Estrutura do Projeto
 
 ```arduino
 meu-projeto/
