@@ -4,7 +4,7 @@ namespace backend.Repository.Interfaces
 {
     public interface IReminderRepository
     {
-        Task<List<Reminder>> GetAllReminders();
+        Task<List<ReminderGroup>> GetAllReminders();
         Task<Reminder> GetReminderById(int id);
         Task<Reminder> AddReminder(Reminder reminder);
         Task<Reminder> UpdateReminder(Reminder reminder, int id);
