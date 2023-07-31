@@ -16,7 +16,15 @@ Este é um projeto de sistema de lembretes desenvolvido como parte do processo d
 - A estrutura do banco de dados segue o modelo definido na classe `Reminder`.
 - Para o controle de versão, o projeto utiliza o Git e está hospedado no GitHub.
 
+## Instruções para Configuração do Banco de Dados
+
+1. Antes de executar a aplicação, é necessário criar o banco de dados. Utilize o arquivo [dtiReminderDB.sql](backend/Data/dtiReminderDB.sql)
+ fornecido para criar o banco de dados no MySQL.
+
+2. Após a criação do banco de dados, atualize a string de conexão no arquivo [appsettings.json](backend/appsettings.json) dentro da pasta backend para que a API se conecte ao banco de dados corretamente.
+
 ## Instruções para Executar o Sistema
+
 
 1. Certifique-se de ter o .NET Core SDK e o Node.js instalados em sua máquina.
 2. Clone este repositório para o seu ambiente de desenvolvimento local.
@@ -46,7 +54,14 @@ npm install
 npm run serve
 ```
 
-7. O sistema estará disponível em http://localhost:8080/ e a API em http://localhost:5000/.
+7. O sistema estará disponível em http://localhost:8080/ e a API em http://localhost:5193/.
+
+
+## Documentação da API
+
+A API possui uma documentação interativa gerada pelo Swagger, que facilita a visualização dos endpoints disponíveis, seus parâmetros e respostas. Para acessar a documentação, basta utilizar o Swagger UI através da seguinte URL:
+
+http://localhost:5193/swagger/index.html
 
 ## Estrutura do Projeto
 
@@ -54,17 +69,19 @@ npm run serve
 testedti/
 ├── backend/
 │   ├── Controllers/
-│   ├── Models/
-│   ├── Services/
 │   ├── Data/
+│   ├── Models/
+│   ├── Repository/
+│   │   └── Interfaces/
 │   └── appsettings.json
 ├── frontend/
 │   ├── public/
 │   ├── src/
 │   │   ├── assets/
 │   │   ├── components/
-│   │   ├── views/
-│   │   ├── api.js
+│   │   ├── Services/
+│   │   ├── App.vue
+│   │   ├── http-common.js
 │   │   └── main.js
 │   ├── babel.config.js
 │   ├── package.json
