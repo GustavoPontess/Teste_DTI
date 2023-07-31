@@ -16,11 +16,10 @@ namespace backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<Reminder>> AllReminders()
+        public async Task<ActionResult<List<ReminderGroup>>> AllReminders()
         {
-
-            List<Reminder> reminders = await _reminderRepository.GetAllReminders();
-            return Ok(reminders);
+            var reminderGroups = await _reminderRepository.GetAllReminders();
+            return Ok(reminderGroups);
         }
 
         [HttpGet("{id}")]

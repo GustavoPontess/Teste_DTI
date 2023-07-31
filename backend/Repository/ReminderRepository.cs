@@ -18,9 +18,26 @@ namespace backend.Repository
         {
             return await _dbContext.Reminders.FirstOrDefaultAsync(r => r.Id == id);
         }
-        public async Task<List<Reminder>> GetAllReminders()
+
+        public async Task<List<ReminderGroup>> GetAllReminders()
         {
-            return await _dbContext.Reminders.Where(r => !r.Is_Deleted).ToListAsync();
+            var reminders = await _dbContext.Reminders
+                .Where(r => !r.Is_Deleted)
+                .OrderBy(r => r.Date)
+                .ToListAsync();
+
+            var groupedReminders = reminders
+                .GroupBy(r => r.Date.Date)
+                .Select(g => new ReminderGroup
+                {
+                    Date = g.Key,
+                    Reminders = g.ToList()
+                })
+                .OrderBy(g => g.Date)
+                .ToList();
+
+            return groupedReminders;
+
         }
 
         public async Task<Reminder> AddReminder(Reminder reminder)
