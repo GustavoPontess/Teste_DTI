@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import ReminderCreateService from "@/services/ReminderCreateService";
-import ReminderEditService from "@/services/ReminderEditService";
+import ReminderCreateService from "@/services/reminderCreateService";
+import ReminderEditService from "@/services/reminderEditService";
 
 export default {
     props: {

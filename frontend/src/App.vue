@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import AllReminderService from "@/services/AllReminderService";
-import ReminderServiceById from "@/services/ReminderServiceById";
+import AllReminderService from "@/services/allReminderService";
+import ReminderServiceById from "@/services/reminderServiceById";
 import ReminderList from "@/components/ReminderList.vue";
 import ReminderForm from "@/components/ReminderForm.vue";
 

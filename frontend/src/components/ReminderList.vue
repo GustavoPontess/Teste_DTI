@@ -20,7 +20,7 @@
 </template>
   
 <script>
-import ReminderDeleteService from "@/services/ReminderDeleteService";
+import ReminderDeleteService from "@/services/reminderDeleteService";
 
 export default {
     name: 'ReminderList',
